@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRM.MAUI.Views.ItemView"
+             Title="ItemView"
+             NavigatedTo="ContentPage_NavigatedTo">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Label Grid.Column="0" Grid.Row="0" Text="Name"/>
+            <Entry Grid.Column="1" Grid.Row="0" Text="{Binding Name}"/>
+
+            <Label Grid.Column="0" Grid.Row="1" Text="Description"/>
+            <Entry Grid.Column="1" Grid.Row="1" Text="{Binding Description}"/>
+
+            <Label Grid.Column="0" Grid.Row="2" Text="Price"/>
+            <Entry Grid.Column="1" Grid.Row="2" Text="{Binding PriceAsString}"/>
+
+            <Label Grid.Column="0" Grid.Row="3" Text="Quantity"/>
+            <Entry Grid.Column="1" Grid.Row="3" Text="{Binding Amount}"/>
+        </Grid>
+
+        <Button Text="Ok" Clicked="OkClicked"/>
+        <Button Text="Cancel" Clicked="CancelClicked"/>
+        
+    </VerticalStackLayout>
+</ContentPage>

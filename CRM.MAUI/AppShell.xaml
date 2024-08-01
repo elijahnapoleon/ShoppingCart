@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CRM.MAUI.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CRM.MAUI"
+    xmlns:views="clr-namespace:CRM.MAUI.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Title="CRM.MAUI">
+
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+    <ShellContent
+        Title="Management"
+        ContentTemplate="{DataTemplate views:InventoryManagementView}"
+        Route="Management" />
+
+    <ShellContent
+        Title="AddItem"
+        ContentTemplate="{DataTemplate views:ItemView}"
+        Route="AddItem"/>
+
+    <ShellContent
+        Title="AddItem"
+        ContentTemplate="{DataTemplate views:ReadItemView}"
+        Route="ReadItem"/>
+
+    <ShellContent
+        Title="AddItem"
+        ContentTemplate="{DataTemplate views:ShopView}"
+        Route="Shop"/>
+
+    <ShellContent
+        Title="AddItem"
+        ContentTemplate="{DataTemplate views:CartItemView}"
+        Route="CartItem"/>
+
+</Shell>

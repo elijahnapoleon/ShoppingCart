@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRM.MAUI.Views.InventoryManagementView"
+             Title="InventoryManagementView"
+             NavigatedTo="ContentPage_NavigatedTo"
+             NavigatedFrom="ContentPage_NavigatedFrom">
+    <VerticalStackLayout>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            
+            <Label Grid.Column="1" Text="Name"/>
+            <Label Grid.Column="2" Text="Price"/>
+            <Label Grid.Column="3" Text="Amount"/>
+
+        </Grid>
+        <ListView
+            ItemsSource="{Binding Items}"
+            SelectedItem="{Binding SelectedProduct}"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="{Binding Id}"/>
+                            <Label Grid.Column="1" Text="{Binding Name}"/>
+                            <Label Grid.Column="2" Text="{Binding DisplayPrice}"/>
+                            <Label Grid.Column="3" Text="{Binding Amount}"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="Add"
+                Clicked="AddClicked"/>
+
+        <Button Text="Edit" 
+                Command="{Binding Path=EditCommand}"
+                CommandParameter="{Binding}"
+                Clicked="EditClicked"/>
+        
+        <Button Grid.Column="4" Text="Delete"
+        CommandParameter="{Binding}"
+        Clicked="Delete_Clicked"/>
+
+        <Button Text="View"
+                Clicked="InlineViewClicked"/>
+
+        <Button Text="Back" 
+                Clicked="BackClicked"
+                />
+
+
+
+    </VerticalStackLayout>
+</ContentPage>

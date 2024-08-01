@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRM.MAUI.MainPage">
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Row="0"
+                        Grid.Column="1"
+                        Text="Manage Inventory"
+                        FontSize="Large"
+                        Clicked="InvClicked"
+                    />
+            <Button Grid.Row="2"
+                    Grid.Column="1"
+                    Text="Shop"
+                    FontSize="Large"
+                    Clicked="ShopClicked"
+                    />
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
